@@ -25,8 +25,8 @@ class SplashScreen extends StatelessWidget {
             height: 180,
           ),
           Container(
-            width: 406,
-            height: 150,
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height * 0.15,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(

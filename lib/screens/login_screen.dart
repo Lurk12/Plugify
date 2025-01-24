@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:plugify/screens/sign_up.dart';
+import 'package:plugify/screens/splash_screen.dart';
 import 'package:plugify/widgets/login_button.dart';
 import 'package:plugify/widgets/login_custom_button.dart';
 
@@ -14,14 +16,14 @@ class LoginScreen extends StatelessWidget {
         child: Stack(
           children: [
             Column(children: [
-              const SizedBox(height: 60),
+              const SizedBox(height: 90),
               Align(
                   alignment: Alignment.center,
-                  child: Image.asset('assets/images/Group 29.png')),
+                  child: Image.asset('assets/images/Group 29.png', width: 70,)),
               const SizedBox(height: 30),
               Align(
                 alignment: Alignment.center,
-                child: Image.asset('assets/images/Group.png'),
+                child: Image.asset('assets/images/Group.png', width: 200,),
               ),
               const SizedBox(height: 60),
               // ignore: sized_box_for_whitespace
@@ -48,7 +50,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 width: double.infinity,
-                height: 491,
+                height: MediaQuery.of(context).size.height * 0.6,
                 child: Column(
                   children: [
                     Align(
@@ -186,6 +188,7 @@ class LoginScreen extends StatelessWidget {
                           prefixIcon: const Icon(Icons.lock_outline),
                           labelStyle: GoogleFonts.plusJakartaSans(
                               color: Colors.black, fontSize: 13),
+                              floatingLabelBehavior: FloatingLabelBehavior.never,
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(10),
@@ -207,7 +210,10 @@ class LoginScreen extends StatelessWidget {
                               fontSize: 14,
                               fontWeight: FontWeight.w500)),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const SignUpScreen() ));
+                        },
                         child: Text('Sign up',
                             style: GoogleFonts.plusJakartaSans(
                                 color: const Color.fromRGBO(0, 0, 0, 0.5),
@@ -221,9 +227,9 @@ class LoginScreen extends StatelessWidget {
             ]),
              Positioned(
                 top: 60,
-                right: 20,
+                right: 30,
                 child: GestureDetector(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SplashScreen())),
                   child: const Icon(Icons.close, color: Colors.white))),
           ],
         ),
