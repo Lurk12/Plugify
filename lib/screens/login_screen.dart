@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:plugify/screens/homepage.dart';
 import 'package:plugify/screens/sign_up.dart';
 import 'package:plugify/screens/splash_screen.dart';
 import 'package:plugify/widgets/login_button.dart';
@@ -199,7 +200,10 @@ class LoginScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     LoginButton(
                         text: 'Log in',
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const Homepage()));
+                        },
                         color: const Color.fromRGBO(203, 237, 98, 1),
                         textColor: Colors.black),
                     const SizedBox(height: 1),

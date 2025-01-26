@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:plugify/screens/homepage.dart';
 import 'package:plugify/widgets/custom_screen_design.dart';
 import 'package:plugify/widgets/login_button.dart';
 
@@ -25,7 +26,7 @@ class VerifiedScreen extends StatelessWidget{
         ),
         const SizedBox(height: 70),
         LoginButton(text: 'Go Home', onPressed: (){
-          
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage()));
         }, color:const Color.fromRGBO(203, 237, 98, 1), textColor: Colors.black)
       ],
     ));
