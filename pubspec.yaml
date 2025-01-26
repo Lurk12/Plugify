@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_otp_text_field: ^1.4.0+2
   google_fonts: ^6.2.1
 
 dev_dependencies:
@@ -25,3 +26,4 @@ flutter:
     - assets/images/Apple.png
     - assets/images/Google.png
     - assets/images/Naija.png
+    - assets/images/Check.png

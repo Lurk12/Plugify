@@ -2,20 +2,20 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:plugify/screens/verify_number_screen.dart';
+import 'package:plugify/screens/verified_screen.dart';
 import 'package:plugify/widgets/custom_screen_design.dart';
 import 'package:plugify/widgets/login_button.dart';
 
-class VerifyEmailScreeen extends StatefulWidget {
-  const VerifyEmailScreeen({super.key});
+class VerifyNumberScreen extends StatefulWidget {
+  const VerifyNumberScreen({super.key});
 
   @override
-  State<VerifyEmailScreeen> createState() {
+  State<VerifyNumberScreen> createState() {
     return _VerifyEmailScreeenState();
   }
 }
 
-class _VerifyEmailScreeenState extends State<VerifyEmailScreeen> {
+class _VerifyEmailScreeenState extends State<VerifyNumberScreen> {
    late Timer timer; // Timer instance
   int remainingTime = 10; // Countdown time in seconds
 
@@ -46,8 +46,8 @@ class _VerifyEmailScreeenState extends State<VerifyEmailScreeen> {
   @override
   Widget build(BuildContext context) {
     return CustomScreenDesign(
-      text: 'Verify your email address 📭 ',
-      text2: 'Please input the code sent to your email',
+      text: 'Verify your phone number ☎️ ',
+      text2: 'Please input the code sent to your phone number',
       child: Column(
         children: [
           OtpTextField(
@@ -77,7 +77,7 @@ class _VerifyEmailScreeenState extends State<VerifyEmailScreeen> {
           ),
           const SizedBox(height: 200,),
           LoginButton(text: 'Continue', onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const VerifyNumberScreen()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const VerifiedScreen()));
           }, color:const Color.fromRGBO(203, 237, 98, 1), textColor: Colors.black)
         ],
       ),
