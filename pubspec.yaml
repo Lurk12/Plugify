@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   flutter_otp_text_field: ^1.4.0+2
   google_fonts: ^6.2.1
+  standard_searchbar: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -29,3 +30,15 @@ flutter:
     - assets/images/Naija.png
     - assets/images/Check.png
     - assets/images/Group_dark.png
+    - assets/images/image1.png
+    - assets/images/image2.png
+    - assets/images/image3.png
+    - assets/images/image4.png
+    - assets/images/image5.png
+    - assets/images/olamide.png
+    - assets/images/Bitmoji.png
+    - assets/images/summer.png
+    - assets/images/girls.png
+    - assets/images/rave.png
+    - assets/images/turnfest.png
+    - assets/images/bold.png

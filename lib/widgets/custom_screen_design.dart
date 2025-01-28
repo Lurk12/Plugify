@@ -37,7 +37,7 @@ class CustomScreenDesign extends StatelessWidget {
                 ),
                 Container(
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.64,
+                  height: MediaQuery.of(context).size.height * 0.65,
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(

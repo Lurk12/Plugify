@@ -22,11 +22,11 @@ class SplashScreen extends StatelessWidget {
             child: Image.asset('assets/images/Group.png'),
           ),
           const SizedBox(
-            height: 180,
+            height: 182,
           ),
           Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.15,
+            height: MediaQuery.of(context).size.height * 0.17,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
