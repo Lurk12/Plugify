@@ -1,6 +1,7 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:plugify/screens/login_screen.dart';
+import 'package:plugify/screens/view_ticket.dart';
 import 'package:plugify/widgets/buy_ticket_button.dart';
 import 'package:plugify/widgets/events_card.dart';
 import 'package:plugify/widgets/side_drawer_list_tile.dart';
@@ -23,7 +24,13 @@ class _HomepageState extends State<Homepage> {
     {'image': 'assets/images/image4.png', 'title': 'Prime Suspect'},
     {'image': 'assets/images/image5.png', 'title': 'Heat Wave'},
   ];
+ int _selectedPageIndex = 0;
 
+  void _selectPage(int index) {
+    setState(() {
+      _selectedPageIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -258,9 +265,25 @@ class _HomepageState extends State<Homepage> {
               ],
             ),
           ),
-          const Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child: BuyTicketButton()),
+          const SizedBox(
+            height: 10,
+          ),
+           Padding(
+              padding:const EdgeInsets.only(left: 20, right: 20),
+              child: BuyTicketButton(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ViewTicket(
+                        about: 'Established in 2004, we are proud to be dedicated curators of premium African entertainment experiences. As curators of the largest music concerts in Nigeria, over 300 African Artists have graced Flytime stages. Flytime Fest has created bridges between art and entertainment from Nigeria to the World.',
+                        date:'December 23 2024 10:00 PM', 
+                        image: 'assets/images/olamide.png', 
+                        location: 'Eko Convention Center, Victoria Island, Lagos', 
+                       event: 'FLYTIME FEST 2024',
+                        title: 'Flytime Fest 2024',
+                      )));
+                },
+
+              )),
           const SizedBox(
             height: 10,
           ),
@@ -347,7 +370,7 @@ class _HomepageState extends State<Homepage> {
                       showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          title: Text('View All'),
+                          title: const Text('View All'),
                           content:
                               const Text("You clicked on the view all button."),
                           actions: [
@@ -382,7 +405,7 @@ class _HomepageState extends State<Homepage> {
                 title: 'FRIDAY GIRLS NIGHT OUT',
                 date: 'Oct 6, 2024  6:00PM',
                 location: 'Lagos',
-                attending: '5,607 Attending',
+                attending: '5,607',
                 eventType: 'HANGOUT'),
           ),
           const Padding(
@@ -392,7 +415,7 @@ class _HomepageState extends State<Homepage> {
               title: 'STAY BOLD',
               date: 'Nov 11, 2024  6:00PM',
               location: 'Abija',
-              attending: '300 Attending',
+              attending: '300',
               eventType: 'OUTREACH',
               categoryColor: Color.fromRGBO(243, 171, 37, 1),
             ),
@@ -404,7 +427,7 @@ class _HomepageState extends State<Homepage> {
               title: 'THE TURN FEST',
               date: 'Nov 12, 2024  5:00PM',
               location: 'Ibadan',
-              attending: '1,627 Attending',
+              attending: '1,627',
               eventType: 'FESTIVAL',
             ),
           ),
@@ -415,7 +438,7 @@ class _HomepageState extends State<Homepage> {
               title: 'RAVE: THE PARTY',
               date: 'Nov 21, 2024  11:00PM',
               location: 'Enugu',
-              attending: '1,627 Attending',
+              attending: '1,627',
               eventType: 'RAVE',
               categoryColor: Color.fromRGBO(38, 211, 103, 1),
             ),
@@ -465,6 +488,8 @@ class _HomepageState extends State<Homepage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedPageIndex,
+        onTap: _selectPage,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
